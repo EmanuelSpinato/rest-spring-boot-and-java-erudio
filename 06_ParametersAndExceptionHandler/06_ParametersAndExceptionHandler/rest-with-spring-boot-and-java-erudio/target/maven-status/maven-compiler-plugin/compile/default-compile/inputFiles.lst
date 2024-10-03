@@ -1,0 +1,7 @@
+C:\Code\rest-spring-boot-and-java-erudio\06_ParametersAndExceptionHandler\06_ParametersAndExceptionHandler\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\math\SimpleMath.java
+C:\Code\rest-spring-boot-and-java-erudio\06_ParametersAndExceptionHandler\06_ParametersAndExceptionHandler\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\exceptions\ExceptionResponse.java
+C:\Code\rest-spring-boot-and-java-erudio\06_ParametersAndExceptionHandler\06_ParametersAndExceptionHandler\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\converters\NumberConverter.java
+C:\Code\rest-spring-boot-and-java-erudio\06_ParametersAndExceptionHandler\06_ParametersAndExceptionHandler\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\controllers\MathController.java
+C:\Code\rest-spring-boot-and-java-erudio\06_ParametersAndExceptionHandler\06_ParametersAndExceptionHandler\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\exceptions\handler\CustomizedResponseEntityExceptionHandler.java
+C:\Code\rest-spring-boot-and-java-erudio\06_ParametersAndExceptionHandler\06_ParametersAndExceptionHandler\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\exceptions\UnsupportedMathOperationException.java
+C:\Code\rest-spring-boot-and-java-erudio\06_ParametersAndExceptionHandler\06_ParametersAndExceptionHandler\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\Startup.java

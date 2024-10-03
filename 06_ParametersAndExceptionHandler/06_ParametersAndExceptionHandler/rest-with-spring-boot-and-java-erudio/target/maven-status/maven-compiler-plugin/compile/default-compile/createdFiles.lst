@@ -1,0 +1,7 @@
+br\com\erudio\controllers\MathController.class
+br\com\erudio\math\SimpleMath.class
+br\com\erudio\exceptions\ExceptionResponse.class
+br\com\erudio\converters\NumberConverter.class
+br\com\erudio\exceptions\handler\CustomizedResponseEntityExceptionHandler.class
+br\com\erudio\exceptions\UnsupportedMathOperationException.class
+br\com\erudio\Startup.class
