@@ -18,7 +18,7 @@ public class AtributoDinamico {
 
     private String tipo;
 
-    private String valor;
+    private String descricao;
 
     @ManyToOne
     @JoinColumn(name = "produto_id")
@@ -48,12 +48,12 @@ public class AtributoDinamico {
 		this.tipo = tipo;
 	}
 
-	public String getValor() {
-		return valor;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setValor(String valor) {
-		this.valor = valor;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public Produto getProduto() {

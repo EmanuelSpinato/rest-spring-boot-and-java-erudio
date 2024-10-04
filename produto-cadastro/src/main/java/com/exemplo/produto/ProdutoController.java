@@ -1,13 +1,9 @@
 package com.exemplo.produto;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
+import org.springframework.web.bind.annotation.*;
 
 import jakarta.validation.Valid;
 
@@ -15,16 +11,25 @@ import jakarta.validation.Valid;
 @RequestMapping("/produtos")
 public class ProdutoController {
 
-    @Autowired
-    private ProdutoService produtoService;
+    private final ProdutoRepository produtoRepository;
+
+    public ProdutoController(ProdutoRepository produtoRepository) {
+        this.produtoRepository = produtoRepository;
+    }
 
     @PostMapping
-    public ResponseEntity<?> criarProduto(@Valid @RequestBody Produto produto, BindingResult result) {
-        if (result.hasErrors()) {
-            return ResponseEntity.badRequest().body(result.getAllErrors());
-        }
-        Produto produtoSalvo = produtoService.salvarProduto(produto, result);
-        return ResponseEntity.status(HttpStatus.CREATED).body(produtoSalvo);
-    }
-}
+    public ResponseEntity<?> criarProduto(@Valid @RequestBody Produto produto) {
+        try {
+            // Verifica se o produto já existe
+            if (produto.getId() != null && produtoRepository.existsById(produto.getId())) {
+                return ResponseEntity.status(HttpStatus.CONFLICT).body("O produto já existe.");
+            }
 
+            Produto produtoSalvo = produtoRepository.save(produto);
+            return ResponseEntity.ok(produtoSalvo);
+        } catch (ObjectOptimisticLockingFailureException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("O produto foi modificado por outra transação.");
+        }
+    }
+
+}
