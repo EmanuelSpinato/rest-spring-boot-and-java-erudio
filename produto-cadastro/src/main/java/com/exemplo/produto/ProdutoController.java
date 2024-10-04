@@ -20,7 +20,7 @@ public class ProdutoController {
     @PostMapping
     public ResponseEntity<?> criarProduto(@Valid @RequestBody Produto produto) {
         try {
-            // Verifica se o produto já existe
+            
             if (produto.getId() != null && produtoRepository.existsById(produto.getId())) {
                 return ResponseEntity.status(HttpStatus.CONFLICT).body("O produto já existe.");
             }
